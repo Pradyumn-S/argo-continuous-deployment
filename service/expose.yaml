@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: node-chat-socketio
+    environment: dev
+  name: chat-io
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: express
+  selector:
+    app: node-chat-socketio
+  type: NodePort
+status:
+  loadBalancer: {}

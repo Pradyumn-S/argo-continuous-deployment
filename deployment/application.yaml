@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: chat-io
+    labels:
+        environment: dev
+        app: node-chat-socketio
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: node-chat-socketio
+    template:
+        metadata:
+            labels:
+                app: node-chat-socketio
+                tier: backend
+                track: stable
+        spec:
+            containers:
+                - name: chat-io
+                  image: "pradyumn5/node-chat-socketio:v1.0"
+                  ports:
+                    - name: express
+                      containerPort: 3000
+                  env:
+                    - name: PORT
+                      valueFrom:
+                        configMapKeyRef:
+                            name: chat-io-config
+                            key: port
+
+

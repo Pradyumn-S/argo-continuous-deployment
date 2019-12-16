@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  port: "3000"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2019-12-15T14:20:53Z"
+  name: chat-io-config
+  namespace: default
+  resourceVersion: "127472"
+  selfLink: /api/v1/namespaces/default/configmaps/chat-io-config
+  uid: 5f3f2a7a-a307-42c0-959c-1022e41f643d
