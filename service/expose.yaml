@@ -8,7 +8,7 @@ metadata:
   name: chat-io
 spec:
   ports:
-  - port: 8080
+  - port: 9000
     protocol: TCP
     targetPort: express
   selector:
